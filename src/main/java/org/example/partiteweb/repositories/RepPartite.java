@@ -77,9 +77,9 @@ public class RepPartite {
     public List<Partita> getAllPartite(String sport) {
         String sql = "SELECT * FROM partite WHERE sport=?";
         RowMapper<Partita> partitaRowMapper = (r, i) -> {
-            Partita rowObject = new partita();
+            Partita rowObject = new Partita();
             rowObject.setId(r.getInt("ID"));
-            rowObject.setGiorno(r.getString("Giorno").String());
+            rowObject.setGiorno(r.getString("Giorno").toString());
             rowObject.setId_squadracasa(r.getString("squadracasa"));
             rowObject.setId_squadrafuori(r.getString("squadrafuori"));
             return rowObject;
