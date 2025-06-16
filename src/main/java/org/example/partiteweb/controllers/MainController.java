@@ -1,16 +1,17 @@
 package org.example.partiteweb.controllers;
 
 import org.example.partiteweb.pojos.Partita;
+import org.example.partiteweb.pojos.Squadra;
 import org.example.partiteweb.repositories.RepPartite;
 import org.example.partiteweb.repositories.RepSquadre;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.util.List;
 @RestController
+@RequestMapping("/partite")
 
 public class MainController {
 
@@ -44,5 +45,11 @@ public class MainController {
                                              @RequestParam String giorno,
                                              @RequestParam List<Integer> predictions){
         return repPartite.getResults(sport,giorno,predictions);
+    }
+
+    @GetMapping("/listaSquadre")
+    public ResponseEntity<List<Squadra>> getSquadreBySport(@RequestParam String sport) {
+        List<Squadra> squadre = repSquadre.getSquadra(sport);
+        return ResponseEntity.ok(squadre);
     }
 }
