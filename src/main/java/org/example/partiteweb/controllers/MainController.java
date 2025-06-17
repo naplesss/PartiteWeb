@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.awt.*;
 import java.util.List;
 @RestController
-@RequestMapping("/partite")
 
 public class MainController {
 
