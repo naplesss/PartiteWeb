@@ -54,7 +54,7 @@ public class RepPartite {
     }
 
     public void createPartite(String sport) {
-        String sql = "INSERT INTO partite (sport,id_squadracasa,id_squadrafuori, giorno,risultato) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO partite (sport,ID_SQUADRACASA,id_squadrafuori, giorno,risultato) VALUES (?,?,?,?,?)";
         List<Squadra> squadre = repSquadre.getSquadra(sport);
         Random random = new Random();
         int id1, id2;

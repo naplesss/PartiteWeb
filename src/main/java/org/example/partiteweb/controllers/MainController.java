@@ -39,11 +39,13 @@ public class MainController {
    // @PostMapping("/createMatches")
    // public  void createMatches(@RequestBody String sport);
 
-    @PostMapping(value = "/prendiRisultati",produces = MediaType.APPLICATION_JSON_VALUE)
-    public  List<Integer> getResults(@RequestParam String sport,
-                                             @RequestParam String giorno,
-                                             @RequestParam List<Integer> predictions){
-        return repPartite.getResults(sport,giorno,predictions);
+    @PostMapping(value = "/prendiRisultati", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Integer> getResults(
+            @RequestParam String sport,
+            @RequestParam String giorno,
+            @RequestBody List<Integer> predictions) {
+        return repPartite.getResults(sport, giorno, predictions);
+
     }
 
     @GetMapping("/listaSquadre")
