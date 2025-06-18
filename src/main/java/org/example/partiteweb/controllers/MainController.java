@@ -32,8 +32,8 @@ public class MainController {
     }
 
     @PostMapping(value = "/getTeams",produces = MediaType.APPLICATION_JSON_VALUE)
-    public  List<Partita> getTeams(@RequestParam String sport){
-        return repPartite.getAllPartite(sport);
+    public  List<Squadra> getTeams(@RequestParam String sport){
+        return repSquadre.getSquadra(sport);
     }
 
    // @PostMapping("/createMatches")

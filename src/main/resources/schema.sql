@@ -13,8 +13,9 @@ CREATE TABLE IF NOT EXISTS partite (
 
 insert into squadre (nomesquadra, sport)
     SELECT * FROM (
-        values('peppina','polo'),
-            ('gioia','lacrosse'),
-            ('pollo','fune')
+        values('I leoni di Montagna','lacrosse'),
+            ('Saette','lacrosse'),
+            ('Rug-nis','lacrosse'),
+            ('Lax & Order','lacrosse')
         ) as squadrep(nomesquadra, sport)
 WHERE NOT EXISTS(SELECT 1 FROM squadre LIMIT 1);
