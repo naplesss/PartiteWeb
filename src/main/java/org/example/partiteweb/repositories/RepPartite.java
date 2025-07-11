@@ -42,7 +42,7 @@ public class RepPartite {
             return rs.getInt("risultato");
         };
         List<Integer> risultato = jdbc.query(sql, rowMapper, sport, giorno);
-        int rowNum = 1, c = 0;
+        int rowNum = 0, c = 0;
         for (Integer prediction : predictions) {
             if (Objects.equals(prediction, risultato.get(rowNum))) {
                 c++;
@@ -80,8 +80,8 @@ public class RepPartite {
             Partita rowObject = new Partita();
             rowObject.setId(r.getInt("ID"));
             rowObject.setGiorno(r.getString("Giorno").toString());
-            rowObject.setId_squadracasa(r.getString("squadracasa"));
-            rowObject.setId_squadrafuori(r.getString("squadrafuori"));
+            rowObject.setId_squadracasa(r.getString("id_squadracasa"));
+            rowObject.setId_squadrafuori(r.getString("id_squadrafuori"));
             return rowObject;
         };
         return jdbc.query(sql, partitaRowMapper, sport);
